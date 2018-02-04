@@ -21,7 +21,7 @@
       "styles": [
         "../node_modules/bootstrap/scss/bootstrap.scss",
         "assets/icomoon/style.scss",
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -56,7 +56,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }
