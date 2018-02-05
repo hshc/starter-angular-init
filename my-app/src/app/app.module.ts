@@ -4,10 +4,14 @@ import { RouterModule, Router } from '@angular/router';
 
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
+import { ItemsModule } from './items/items.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 
+import { ItemsService } from './core/services/items/items.service';
+
 import { AppComponent } from './app.component';
+
 import { environment } from '../environments/environment';
 // import { environment } from '../environments/environment.prod';
 
@@ -18,12 +22,14 @@ import { environment } from '../environments/environment';
     NgbModule.forRoot(),
     RouterModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    ItemsModule
   ],
   declarations: [
     AppComponent
   ],
   providers: [
+    ItemsService
   ],
   bootstrap: [AppComponent]
 })
