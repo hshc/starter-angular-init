@@ -1,0 +1,75 @@
+J1 : 
+Installation de nodeJS
+Installation de yarn : npm install -g yarn
+
+Creation d'un compte gitlab (nico.taroy@gmail.com)
+Creation d'un fork du projet "https://gitlab.com/christopheGueroult/starter-angular-init" --> "https://gitlab.com/hshc/starter-angular-init.git"
+
+Git doit être installé
+Clonage en locale du projet : git clone https://gitlab.com/hshc/starter-angular-init.git
+
+Installation du projet à partir des dépendences définies dans "packhage.json" :
+dans la console :
+	- cd C:\Users\Stagiaire\Documents\starter-angular-init\my-app
+	- yarn install --> cette commande crée un dossier "node_modules" contenue dans le dossier "my-app"
+
+Installation de angular / cli :
+	- aller sur le site angular quick start "http://angular.io/guide/quickstart"
+	- dans la console taper : yarn add global @angular/cli ou si cela ne fonctionne pas "npm install -g @angular/cli"
+	- eventuellement relancer la console
+	- ng -v
+	- on peut à présent utiliser la commande "ng" pour créer un nouveau projet.
+
+On va lancer le projet avec la commande cli "ng" de angular :
+dans la console :
+	- cd C:\Users\Stagiaire\Documents\starter-angular-init\my-app
+	- ng serve --open (cette commande lance un navigateur avec la page de bienvenue du projet)
+
+Etude des évolution ECMAScript 6 (2016) dans les .js (dossier es6/js)
+Présentation de "http://reactivex.io/" avec RxJS
+https://angularbayonne2.firebaseapp.com/#/items
+Etude des "Observable" de RxJS
+
+Debut du cours Angular :
+WebComponent --> "http://developer.mozilla.org/fr/docs/Web/Web_components", 
+cette techno permet d'importer des elements dans du html (custom elements standard HTML5) pilotés par du javaScript
+Cette techno est possible grace au principe du shadow dom qui permet à chaque composant d'avoir son propre DOM. Cela
+évite d'avoir à gérer les collisions d'espaces de noms au niveau de la page parente. On a donc un "DOM root" au niveau
+de la page et un "shadow DOM" par web component.
+On a donc pour chaque component 3 fichiers : 1 js (controler), 1 html (vue), 1 css. Angular fournit donc une liste de
+décorator pour definir le comportement des components qu'il fournit.
+https://angular.io/guide/quickstart
+
+analyse du dossier my-app:
+	e2e : fichier javascript de tests end 2 end
+	protractor.conf.js : permet de faire les test
+	.angular-cli.json : fichier de configuration d'angular
+	.editorconfig : fichier de conf de l'éditeur
+	.gitignore : fichier ignorés par git
+	node_modules: fichiers générés par "yarn instal" il ne faut pas les versionner
+	karma : permet d'executer les tests unitaires
+	package.json : fichier généré automatiquement lors de la création du projet "ng new my-app", il permet de générer le dossier "node_module"
+	README.md : fichier markdown pour l'explication github
+	tsconfig.json : configuration TypeScript, utiliser uniquement par vscode, il n'est pas utiliser par angular lors de la compile
+	src/tsconfig.app.json : est utilisé par le compilo au moment de la compilation
+	tslint.json : configuration du linter pour la validation des regles de codage
+	src/assets : contient les images et vidéos, les icones ...
+	main.ts : premier fichier lu par angular, défini dans ".angular-cli.json"
+
+compodoc / jsdoc
+
+l'application est lancée comme suit :
+	- .angular-cli.json --> main.ts
+	- maint.ts --> définission du bootsrapping du premier module "AppModule"
+	- app.module.ts --> impors des composents nécessaires et du premier component à charger "AppComponent"
+	- selector app-root
+
+le code TypeScript, ES6, ES7 ... est transpilé en ES5 qui vont se retrouver dans le dossier "build"
+le transpiler est babel transpiler.
+
+Les polyfills (polyfills.ts) permet d'émuler les nouvelles balises pour les navigateurs trop anciens.
+Les polyfills sont générés en javaScript et envoyé au navigateur.
+
+
+
+
