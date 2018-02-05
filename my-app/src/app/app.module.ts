@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { Router, RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+// import { environment } from '../environments/environment.prod';
 
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    RouterModule,
   ],
-  providers: [],
+  declarations: [
+    AppComponent
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
