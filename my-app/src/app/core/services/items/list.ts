@@ -1,4 +1,6 @@
-export const ITEMS = [
+import { Item } from '../../../shared/models/item.model';
+
+export const ITEMS: Item[] = [
     {
       id : '7891',
       name : 'Christophe',

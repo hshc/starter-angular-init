@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ITEMS } from './list';
+import { Item } from '../../../shared/models/item.model';
 
 @Injectable()
 export class ItemsService {
-  private collection: any = ITEMS;
+  private collection: Item[] = ITEMS;
 
   constructor() { }
 
-  getCollection(): any {
+  getCollection(): Item[] {
     return this.collection;
   }
 }
