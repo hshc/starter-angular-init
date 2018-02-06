@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Item } from '../../../shared/models/item.model';
+import { State } from '../../../shared/enums/state.enum';
 
 @Component({
   selector: 'app-item',
@@ -12,11 +13,11 @@ export class ItemComponent implements OnInit {
   // "item.component.html" malgré la problématique du shadow DOM qui isole les DOM
   // des composants (see. list-items.component.html)
   @Input() item: Item;
-
   // pour faire une indirection suplémentaire dans le html avec
   // <app-item [toto]="htmlItem"></app-item> lors de l'appel :
   // @Input('toto') item: Item;
 
+  state = State;
 
   constructor() { }
 

@@ -11,7 +11,7 @@ export const ITEMS: Item[] = [
       id : '4678',
       name : 'Julien',
       reference : '5421',
-      state : 'A livrer'
+      state : 'En cours'
     },
     {
       id : '2743',
