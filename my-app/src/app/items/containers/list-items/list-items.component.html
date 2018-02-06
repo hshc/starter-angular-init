@@ -11,7 +11,7 @@
   <!-- le 'div *ngFor="let htmlItem of collection"' ajoute dans le DOM des div qui ne servent
   à rien, pour éviter cela on utilise la 'TRANSCLUSION' qui permet de créer des élements qui
   affichent des composents provenant d'ailleurs -->
-  <ng-container *ngFor="let htmlItem of collection">
+  <ng-container *ngFor="let htmlItem of collection$ | async">
     <!-- ici on fait du binding avec '[]' de htmlItem sur la variable de ItemComponent.item définie -->
     <!-- dans le fichier 'item.component.ts' -->
     <app-item [item]="htmlItem"></app-item>
