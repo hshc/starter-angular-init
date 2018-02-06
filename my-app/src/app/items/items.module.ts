@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ItemsRoutingModule } from './items-routing.module';
 
 import { ListItemsComponent } from './containers/list-items/list-items.component';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { ListItemsComponent } from './containers/list-items/list-items.component
     ItemsRoutingModule
   ],
   declarations: [
-    ListItemsComponent
+    ListItemsComponent,
+    ItemComponent
   ],
   exports: [
     ListItemsComponent

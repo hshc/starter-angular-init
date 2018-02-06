@@ -1,3 +1,13 @@
 <p>
-  list-items works! {{ collection }}
+  list-items works! {{ collection | json }}
 </p>
+
+<div class="container">
+
+  <div *ngFor="let htmlItem of collection">
+    <!-- ici on fait du binding avec '[]' de htmlItem sur la variable de ItemComponent.item définie -->
+    <!-- dans le fichier 'item.component.ts' -->
+    <app-item [item]="htmlItem"></app-item>
+  </div>
+
+</div>
