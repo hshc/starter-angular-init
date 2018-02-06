@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ItemsModule } from './items/items.module';
 
 // see "https://angular.io/guide/router"
 
 const appRoutes: Routes = [
+  {
+    // mise en place lazyloading
+    path: 'items', loadChildren: 'app/items/items.module#ItemsModule'
+    // fin lazyLoading
+  },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full' // permet de récupérer l'ensemble ou une section de l'url
@@ -17,7 +23,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
     // other imports here
   ],
   declarations: [],
