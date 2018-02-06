@@ -9,7 +9,7 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 // pas besoin de supprimer cet import ItemsModule pour permettre le lazyloading
 // puisque ces imports sont uniquement utilisés pour la transpilation qui génere le javascript
-// import { ItemsModule } from './items/items.module';
+import { ItemsModule } from './items/items.module';
 import { ItemsService } from './core/services/items/items.service';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { SharedModule } from './shared/shared.module';
