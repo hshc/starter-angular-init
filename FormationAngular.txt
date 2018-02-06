@@ -71,5 +71,95 @@ Les polyfills (polyfills.ts) permet d'émuler les nouvelles balises pour les navi
 Les polyfills sont générés en javaScript et envoyé au navigateur.
 
 
+l'archi appli :
+
+	un module "SharedModule" - avec des component tous réutilisables sans modif sur d'autres appli
+	un module "HomeModule" - la home
+	un module "CoreModule" - ce module contient les services tous chargés au démarage en singleton
+	... tous les autre modules propre à notre web app sont chargés à la volée
+
+	Le module principal "AppRoot" qui contient AppComponent, importe shared, home et core au démarrage.	
 
 
+
+
+Les technique utilisées sont :
+	- lazyloading
+	- redus (eq. reactJS de ngrx, c'etait le premier), il permet d'utiliser le cache du navigateur en sauvegardant des snapshot de navigation des états de la page
+	- ngrx (outil visuel de mesure accessible via npm)
+	- service worker - très propice à la pwa (progressive web application)
+
+Les plugins "Visual Code":
+	angular essentials
+	material icon theme
+	angularDoc
+
+Creation des modules : (cf. doc "angular.io")
+	- "ng generate module shared" (ou "ng g module shared". Suffixe automatique en .module.ts)
+		ng generate module shared
+		create src/app/shared/shared.module.ts (190 bytes)
+	- "ng g module home"
+	- "ng g module core"
+	- "ng g module page not found"
+
+
+l'archi d'un module :
+	- module.ts
+	- folder "containers"
+	- folder "components"
+	- folder "services"
+	- file   "interfaces"
+	- folder "directives"
+	- folder "enum"
+
+Creation des components du module "home"
+	- mkdir C:\Users\Stagiaire\Documents\starter-angular-init\my-app\src\app\home\components
+	- cd components
+	- "ng g component home"
+
+Pour comprendre le fonctionnement du composant "http://angular.io/guide/lifecycle-hooks"
+
+tests : jasmin / site : code craft
+
+creation d'un composant de navigation :
+	- mkdir C:\Users\Stagiaire\Documents\starter-angular-init\my-app\src\app\shared\components
+	- cd components
+	- "ng g component home"
+
+Installation de bootstrap : (framework css)
+	- http://getbootstrap.com
+	- yarn add bootstrap (ou npm install bootstrap)
+Installation de ng-bootsrap : (ré-ecriture pour angular avec type script)
+	- http://ng-bootstrap.github.io/#/getting-started
+	- 
+
+plugin emmet installable sur tous les IDE
+"angular material" ou "ng bootsrap"
+
+
+notion de directives:
+
+directive de structure : permet de manipuler le DOM
+
+
+
+UTILISATION DE FIREBASE -- https://firebase.google.com/ --- pour mettre en place ConnectAPI et les Observables
+https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
+yarn add firebase angularfire2 --save (a verifier dans package.json)
+
+
+
+
+
+http://localhost:4200/items/liste
+http://ninja-squad.fr/
+https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript/37511463#37511463
+https://console.firebase.google.com/project/angularnico/database/firestore/data~2Fcollection~2FdwXQP46QHERZgJrOwNDy
+https://github.com/angular/angularfire2/blob/master/docs/firestore/collections.md
+http://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
+https://angular.io/api/common/JsonPipe
+https://getbootstrap.com/docs/4.0/components/card/#header-and-footer
+https://ng-bootstrap.github.io/#/home
+http://vertx.io/docs/vertx-rx/java/
+http://reactivex.io/
+https://gitlab.com/hshc/starter-angular-init
