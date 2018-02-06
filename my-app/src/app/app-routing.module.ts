@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+
 import { ItemsModule } from './items/items.module';
 
 // see "https://angular.io/guide/router"
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
     CommonModule,
     RouterModule.forRoot(
       appRoutes,
+      {preloadingStrategy: PreloadAllModules}, // precharge les modules lazyloading en tache de fond
       // { enableTracing: true } // <-- debugging purposes only
     ),
     // other imports here
