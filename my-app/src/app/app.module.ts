@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,13 +17,14 @@ import { SharedModule } from './shared/shared.module';
 
 
 
-import { environment } from '../environments/environment';
-// import { environment } from '../environments/environment.prod';
+// import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     NgbModule.forRoot(),
     SharedModule,
     HomeModule,
